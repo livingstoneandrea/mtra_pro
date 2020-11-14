@@ -1,0 +1,266 @@
+{% extends 'accounts/profile_base.html' %}
+{% load static %}
+
+{% block main_content %}
+    
+    <section class="--row">
+                        <article class="grid-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-align_c">
+                                        <img src="{% static 'images/no-image-person.jpg' %}" alt="" class="rounded-circle" width="150">
+                                        <h4 class="card-title">{{request.user.first_name}} {{request.user.last_name}}</h4>
+                                        <p class="card-subtitle">Front End Developer</p>
+                                        <div class="--row text-align_c layout-center">
+                                            {% comment %} <div class="grid-4">
+                                                <a href="" class="link"><i class="fas fa-user"></i></a>
+                                                <font class="font-medium">120</font>
+                                            </div>
+                                            <div class="grid-4">
+                                                <a href="" class="link"><i class="fas fa-info-circle"></i></a>
+                                                <font class="font-medium">20</font>
+                                            </div> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="box-marginBottom-0">
+                                <div class="card-body">
+                                    <small class="text-muted d-block box-paddingTop-10">Email address</small>
+                                    <h6>{{request.user.email}}</h6>
+                                    <small class="text-muted d-block  box-paddingTop-10">Phone</small>
+                                    <h6>{{request.user.phone}}</h6>
+                                    <small class="text-muted d-block  box-paddingTop-10">Address</small>
+                                    <h6>{{request.user.address}}</h6>
+                                    <small class="text-muted d-block  box-paddingTop-10">location</small>
+                                    <h6>{{request.user.location}}</h6>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="grid-8">
+                            <div class="card">
+                                <ul class="nav nav-pills custom-pills">
+                                    <li class="nav-item">
+                                        <a href="#time-line" class="nav-link active" id="pills-timeline-tab">Timeline</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#profile" class="nav-link" id="pills-profile-tab">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#profile-setting" class="nav-link" id="pills-settings-tab">Setting</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade active show" id="time-line">
+                                        <div class="card-body">
+                                            <div class="profiletimeline box-marginTop-0">
+                                                <div class="sl-item">
+                                                    <div class="sl-left">
+                                                        <img src="{% static 'images/no-image-person.jpg' %}" alt="" class="rounded-circle">
+                                                    </div>
+                                                    <div class="sl-right">
+                                                        <div>
+                                                            <a href="javascript:void(0)" class="link">Personal
+                                                                Details</a>
+                                                            <span class="">complete</span>
+                                                            <p class="box-marginTop-10">
+                                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. ipsum reiciendis ab! Nemo, culpa!
+                                                            </p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="sl-item">
+                                                    <div class="sl-left">
+                                                        <img src="{% static 'images/no-image-person.jpg' %}" alt="" class="rounded-circle">
+                                                    </div>
+                                                    <div class="sl-right">
+                                                        <a href="javascript:void(0)" class="link">Employement info</a>
+                                                        <span class="">update</span>
+                                                        <p class="box-marginTop-10">
+                                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. ipsum reiciendis ab! Nemo, culpa!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="sl-item">
+                                                    <div class="sl-left">
+                                                        <img src="{% static 'images/no-image-person.jpg' %}" alt="" class="rounded-circle">
+                                                    </div>
+                                                    <div class="sl-right">
+                                                        <a href="javascript:void(0)" class="link">Education Details</a>
+                                                        <span class="">On Track</span>
+                                                        <p class="box-marginTop-10">
+                                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. ipsum reiciendis ab! Nemo, culpa!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="sl-item">
+                                                    <div class="sl-left">
+                                                        <img src="{% static 'images/no-image-person.jpg' %}" alt="" class="rounded-circle">
+                                                    </div>
+                                                    <div class="sl-right">
+                                                        <a href="javascript:void(0)" class="link">Preference info</a>
+                                                        <span class="">complete</span>
+                                                        <p class="box-marginTop-10">
+                                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. ipsum reiciendis ab! Nemo, culpa!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show " id="profile">
+                                        <div class="card-body">
+                                            <section class="card">
+                                                <button class="accordion" style="border-radius: 20px 20px  0 20px; ">Personal info</button>
+                                                <div class="panel box_vertMarg2">
+                                                    <p class="">Update you profile info with missing info</p>
+                                                    <form action="" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="profile_info" value="profile_info"/>
+                                                        <div class="--row">
+                                                        {% for field in profile_form %}
+                                                            <div class="grid-6">
+                                                                <div class="form-group">
+                                                                {{ field.errors }}
+                                                                {{ field.label_tag }} {{ field }}
+                                                                {% if field.help_text %}
+                                                                <p class="help">{{ field.help_text|safe }}</p>
+                                                                {% endif %}
+                                                                </div>
+                                                            </div>  
+                                                        {% endfor %}
+                                                        
+                                                        </div>
+                                                        <div class="--row">
+                                                            <div class="grid-12">
+                                                                <button type="submit" class="btn"><i class="ik ik-check-circle"></i> Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <button class="accordion" style="border-radius: 20px 20px  0 20px; ">Education Details</button>
+                                                <div class="panel box_vertMarg2">
+                                                    <p class="">Update you profile info with missing info</p>
+                                                    <form action="" method="post">
+                                                        
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="edu_details" value="edu_details"/>
+                                                        <div class="--row">
+                                                        {% for field in edu_detailform %}
+                                                            <div class="grid-6">
+                                                                <div class="form-group">
+                                                                {{ field.errors }}
+                                                                {{ field.label_tag }} {{ field }}
+                                                                {% if field.help_text %}
+                                                                <p class="help">{{ field.help_text|safe }}</p>
+                                                                {% endif %}
+                                                                </div>
+                                                            </div>  
+                                                        {% endfor %}
+                                                        </div>
+                                                        <div class="--row">
+                                                            <div class="grid-12">
+                                                                <button type="submit" class="btn"><i class="ik ik-check-circle"></i> Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <button class="accordion" style="border-radius: 20px 20px  0 20px; ">Employment Details</button>
+                                                <div class="panel box_vertMarg2">
+                                                    <p class="">Employment Details</p>
+                                                    <form action="" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="emp_details" value="emp_details"/>
+                                                        <div class="--row">
+                                                        {% for field in emp_detailform %}
+                                                        <div class="grid-6">
+                                                            <div class="form-group">
+                                                            {{ field.errors }}
+                                                            {{ field.label_tag }} {{ field }}
+                                                            {% if field.help_text %}
+                                                            <p class="help">{{ field.help_text|safe }}</p>
+                                                            {% endif %}
+                                                            </div>
+                                                        </div>  
+                                                        {% endfor %}
+                                                        </div>
+                                                        <div class="--row">
+                                                            <div class="grid-12">
+                                                                <button type="submit" class="btn"><i class="ik ik-check-circle"></i> Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <button class="accordion" style="border-radius: 20px 20px  0 20px; ">Preference info</button>
+                                                <div class="panel box_vertMarg2">
+                                                    <p class="">Preference</p>
+                                                    <form action="" method="post">
+                                                        
+                                                       {% csrf_token %}
+                                                         <input type="hidden" name="pref_info" value="pref_info"/>
+                                                        <div class="--row">
+                                                            {% for field in pref_form %}
+                                                            <div class="grid-6">
+                                                                <div class="form-group">
+                                                                {{ field.errors }}
+                                                                {{ field.label_tag }} {{ field }}
+                                                                {% if field.help_text %}
+                                                                <p class="help">{{ field.help_text|safe }}</p>
+                                                                {% endif %}
+                                                                </div>
+                                                            </div>  
+                                                            {% endfor %}   
+                                                        </div>
+                                                        <div class="--row">
+                                                            <div class="grid-12">
+                                                                <button type="submit" class="btn"><i class="ik ik-check-circle"></i> Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <button class="accordion" style="border-radius: 20px 20px  0 20px; ">Files Uploaded</button>
+                                                <div class="panel box_vertMarg2">
+                                                    <p class="">Files Uploaded</p>
+                                                    <form action="" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="file_upload" value="file_upload"/>
+                                                        <div class="--row">
+                                                            {% for field in file_uploadform %}
+                                                            <div class="grid-6">
+                                                                <div class="form-group">
+                                                                {{ field.errors }}
+                                                                {{ field.label_tag }} {{ field }}
+                                                                {% if field.help_text %}
+                                                                <p class="help">{{ field.help_text|safe }}</p>
+                                                                {% endif %}
+                                                                </div>
+                                                            </div>  
+                                                            {% endfor %}
+                                                        </div>
+                                                        <div class="--row">
+                                                            <div class="grid-12">
+                                                                <button type="submit" class="btn"><i class="ik ik-check-circle"></i> Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show" id="profile-setting">
+                                        <div class="card-body text-align_c">
+                                            <p class=" box_vertMarg2">Delete your account</p>
+                                            <button class="btn" type="button" style="text-transform: uppercase;color: red;" id="del_acc" data-delete_url="{% url 'accounts:delete' pk=request.user.id %}">Delete account</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+{% endblock main_content %}
+

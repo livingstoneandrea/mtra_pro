@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | MT&RA</title>
+    <link rel="icon" href=" {% static 'images/logo.svg' %} " type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/signUp.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-5.2.0-web/css/all.css' %} " />
+</head>
+
+<body class="body-dark_bg">
+    <div class=""></div>
+    <main class="fullscreen">
+        <section class="fullscreen-inner_cont">
+            <form action="" method="POST" class="sign-up" id="sign-up_form">
+                {% csrf_token %}
+                <a href="{% url 'home' %}" style="color: #fff;text-decoration: none;">
+                    <img src=" {% static 'images/logo.svg' %} " alt="" style="width: 68px; height: 68px; border-radius: 50%;" /> MT&RA
+                </a>
+                <div class="sign-up_desc">
+                    <p>Please fill out the information below</p>
+                    <span class="fas fa-user-circle" style="color: #fff;font-size: 3rem;"></span>
+                </div>
+                {% if form.errors %}
+                  <ol>
+                    {% for error in form.errors %}
+                      <li><strong>{{ error }}</strong></li>
+                    {% endfor %}
+                  </ol>
+                {% endif %}
+                <article class="sign-up_field field field_with-icon">
+                    <span class="fas fa-user-check field_icon"></span>
+                     {{form.username}}
+                </article>
+                <article class="sign-up_field field field_with-icon">
+                    <span class="fas fa-envelope-open field_icon"></span>
+                     {{form.email}}
+                </article>
+                <article class="sign-up_field field field_with-icon">
+                    <span class="fas fa-phone field_icon"></span>
+                     {{form.phone}}
+                </article>
+                <article class="sign-up_field field field_with-icon">
+                    <span class="fas fa-eye-slash field_icon"></span>
+                    {{form.password1}}
+                </article>
+                <article class="sign-up_field field field_with-icon">
+                    <span class="fas fa-eye-slash field_icon"></span>
+                    {{form.password2}}
+                </article>
+                <article class="sign-up_footer">
+                    <button type="submit" class="sign-up_btn">Continue</button>
+                </article>
+            </form>
+        </section>
+        <footer class="full-view_footer">
+            <div class="full-view_quiz">
+                Already have an account?
+                <a href=" {% url 'accounts:login' %}">Login</a>
+            </div>
+            <div class="notice">
+                <p>
+                    By clicking&nbsp;continue,&nbsp;i agree to pro-job
+                    <a href=""> Terms and conditions</a>,<a href="">Privacy&nbsp;policy</a> and <a href="">Refund&nbsp;Policy</a>
+                </p>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

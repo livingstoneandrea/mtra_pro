@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | MT&RA</title>
+    <link rel="icon" href=" {% static 'images/logo.svg' %} " type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %} " />
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-5.2.0-web/css/all.css' %} " />
+</head>
+
+<body class="bg_dark">
+    <div class=""></div>
+    <main class="full-view">
+        <section class="full-view_inner_cont">
+            <form method="post" action="" class="login" id="login">
+              {% csrf_token %}
+                <article class="login-desc">
+                    <span class="fas fa-user-tie" style="color: #fff;font-size: 3rem;"></span>
+                    <p>User login</p>
+                </article>
+                {% if form.errors %}
+                  <ol>
+                    {% for error in form.errors %}
+                      <li><strong>{{ error }}</strong></li>
+                    {% endfor %}
+                  </ol>
+                {% endif %}
+                <article class="login_field field">
+                    <span class="fas fa-user-clock field_icon"></span>
+                     {{form.username}}   
+                </article>
+                <article class="login_field field">
+                    <span class="fas fa-eye-slash field_icon"></span>
+                    {{form.password}}  
+                </article>
+                <article class="login_row">
+                    <a href="{% url 'password_reset' %}" class="login_forgot">Forgot password</a>
+                </article>
+                <article class="login_footer">
+                    <button type="submit" class="login_btn">Login</button>
+                </article>
+            </form>
+        </section>
+        <footer class="full-view_footer">
+            <div class="full-view_quiz">
+                Don't have an account?
+                <a href="{% url 'accounts:register' %}">sign Up</a>
+            </div>
+        </footer>
+    </main>
+    <div class="fs_loader">
+        <div class="loader"></div>
+    </div>
+</body>
+{% comment %} <script>
+    document.querySelector(".login_btn").addEventListener("click", function(e) {
+        e.preventDefault();
+        window.location = "{% url 'accounts:profile' %}";
+    });
+</script> {% endcomment %}
+
+</html>

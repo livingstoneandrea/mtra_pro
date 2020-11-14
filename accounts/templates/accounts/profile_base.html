@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT&RA | profile-{{request.user.username}}</title>
+    <link rel="icon" href=" {% static 'images/logo.svg' %} " type="image/x-icon" />
+    <link rel="stylesheet" href=" {% static 'css/profile.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/fontawesome-free-5.2.0-web/css/all.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/icon-kit/dist/css/iconkit.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/perfect-scrollbar.css' %} ">
+</head>
+
+<body>
+    <noscript>You need to enable javascript to run this app.</noscript>
+    <div class="root">
+        <header class="app-header .header-top">
+            <div class="main-menu">
+                <nav class="navbar" role="navigation">
+                    <div class="nav-inner">
+                        <section class="navbar-brand d__flex ">
+                            <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span class="fas fa-align-left fa-2x"></span></button>
+                            <a href="{% url 'home' %}" class=""><img src=" {% static 'images/logo.svg' %}" alt="" width="68px"></a>
+                            <div class="header-search v-center">
+                                <div class="input-group">
+                                    <span class="input-group-addon search-close">
+                                        <i class="ik ik-x"></i>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Search here!..best experience">
+                                    <span class="input-group-addon search-btn">
+                                        <i class="ik ik-search"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="navbar-menu">
+                            <div class="nav_item">
+                                <button class="primary_btn create" role="button" aria-label="User Menu" tabindex="0">
+                                        <span class="">create</span>
+                                        <span class="fas fa-angle-down" style="margin-top: 2px;"></span>
+                                </button>
+                                <div class="dropdown_menu" style="position: absolute;will-change: transform;top: 10px; left: 0px; transform: translate3d(-80px,28px, 0px); background: #fff;">
+                                    <div class="dropdown-inner text_align-c" style="width: 100%;">
+
+                                        <p class="">If you haven't Add info to your profile?</p>
+                                        <ul class="" style="list-style: none;padding: 8px 16px; ">
+                                            <li class="" style="padding: 4px 0px; background-color: #082130;border-radius: 20px; margin-top: 20px;">
+                                                <a href="" class="" style="color:#fff">
+                                                    <i class="fas fa-plus"> </i> Add profile info
+                                                </a>
+                                            </li>
+                                            <li class="" style="padding: 4px 0px; background-color: #082130;border-radius: 20px; margin-top: 20px;">
+                                                <a href="" class="" style="color:#fff">
+                                                    <i class="fas fa-plus"> </i> Add edu details
+                                                </a>
+                                            </li>
+                                            <li class="" style="padding: 4px 0px; "><a href="" class="">Others</a></li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="" class="nav_item"><span class="fab fa-dribbble " style="font-size: 24px;"></span></a>
+                            <a href="{% url 'notification:notifier' %}" class="nav_item"><span class="fas fa-bell " style="font-size: 24px;"></span></a>
+                            <div class="line-strike"></div>
+
+                            <div class="profile">
+                                <div class="acc-opt" role="button" aria-label="User Menu" tabindex="0">
+                                    <div class="">
+                                        <img src="{% static 'images/default1.png' %}" alt="Avatar" class="">
+                                    </div>
+                                    <div class="acc-opt_toggler" style="width: 16px; height: 12px;">
+                                        <span class="fas fa-angle-down"></span>
+                                    </div>
+                                </div>
+                                <div class="dropdown " style="position: absolute;will-change: transform;top: 20px; left: 0px; transform: translate3d(-160px,28px, 0px);">
+                                    <div class="dropdown-inner dropdown-menu dropdown-menu-right" style="width: 100%;">
+                                        <div class="sc-email">
+                                            <div class="sc-email_btn" role="button" tabindex="0">
+                                                <div class="wrapper-avatar"><img src="{% static 'images/default1.png' %}" alt="Avatar" class=""></div>
+                                                <div class="prof-lable">
+                                                    <p class="textTruncate">
+                                                        {{request.user.email}}
+                                                        <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="" style="list-style: none;padding: 8px 16px; border-top: 1px solid rgb(229,232,237);">
+                                            <li class="dropdown-inner_list" style="padding: 4px 0px;"><a href="" class="">My Profile</a></li>
+                                            <li class="dropdown-inner_list" style="padding: 4px 0px;"><a href="{% url 'accounts:logout' %}" class="">Sign Out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="page-wrap">
+            <section class="app-sidebar">
+                <div class="sidebar-header">
+                    <a href="{% url 'home' %}" class="header-brand">
+                        <div class="logo-img">
+                            <img src="{% static 'images/logo.svg' %}" alt="" class="header-brand-img" width="68px">
+                        </div>
+
+                    </a>
+                    <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+                </div>
+                <div class="sidebar-content ps">
+                    <div class="nav-container">
+                        <nav class="navigation-main" id="main-menu-navigation">
+
+                            <div class="nav-item has-sub open">
+                                <a href="javascript:void(0)">
+                                    <span>DASHBOARD</span>
+                                </a>
+                                <div class="submenu-content ">
+                                    <a href="" class="menu-item"><img src=" {% static 'images/no-image-person.jpg' %} " alt="" width="30" style="margin-right: 10px;">{{request.user.username}}</a>
+                                    <a href="{% url 'home' %}" class="menu-item" style="color: #f1f1f1;"><i class="fas fa-home"></i>Back to home</a>
+                                    <a href="{% url 'accounts:profile' %}" class="menu-item" style="color: #f1f1f1;"><i class="fas fa-plus"></i>Create Profile</a>
+                                </div>
+                            </div>
+                            <div style="border-bottom: 1px solid #1c2638;"></div>
+                            <div class="nav-item has-sub open">
+                                <a href="javascript:void(0)">
+                                    <span>MANAGE</span>
+                                </a>
+                                <div class="submenu-content">
+                                    <a href="" class="menu-item">Session info</a>
+                                    <a href="{% url 'password_reset' %}" class="menu-item">Secure account</a>
+                                    <a href="{% url 'accounts:profile' %}" class="menu-item">Monitoring</a>
+                                    <a href="{% url 'notification:notifier' %}" class="menu-item">Notifications</a>
+                                </div>
+                            </div>
+                            <div style="border-bottom: 1px solid#1c2638;;"></div>
+                            <div class="nav-item has-sub ">
+                                <a href="javascript:void(0)">
+                                    <span>ACCOUNT</span>
+                                </a>
+                                <div class="submenu-content">
+                                    <a href="{% url 'accounts:profile' %}" class="menu-item">Profile</a>
+                                    <a href="{% url 'accounts:profile' %}" class="menu-item">Billing</a>
+                                    <a href="{% url 'accounts:profile' %}" class="menu-item">Security</a>
+                                    <a href="{% url 'accounts:profile' %}" class="menu-item">Referrals</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <section class="main-content">
+                <div class="grid-12">
+                    <section class="page-header">
+                        <div class="--row">
+                            <div class="grid-8">
+                                <div class="page-header-title">
+                                    <i class="fas fa-file"></i>
+                                    <div class="d-inline">
+                                        <h5>Profile</h5>
+                                        <span>Lorem ipsum dolor, sit amet. </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-4">
+                                <nav class="breadcrumb-container">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href=""><i class="fas fa-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="">Account</a></li>
+                                        <li class="breadcrumb-item is-active"><a href="">Profile</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    {% block main_content %}
+
+                    
+                    {% endblock main_content %}
+ 
+                </div>
+            </section>
+
+
+        </main>
+        <footer class="footer">
+            <div class="grid-12">
+                <p class="">Copyright &copy; 2020 All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+<script src=" {% static 'js/jquery-3.3.1.js' %}"></script>
+<script src=" {% static 'js/perfect-scrollbar.min.js' %} "></script>
+<script src=" {% static 'js/dashboard.js' %} "></script>
+<script>
+    $(document).ready(function(){
+        $('form').submit(function(e) {
+              e.preventDefault();
+              window.alert("form submitted");
+              var serializedData = $(this).serialize();
+              console.log("serialized data :" + serializedData);
+              
+              $.ajax({ 
+                  url: "{% url 'accounts:profile' %}",
+                  dataType: "json",
+                  method: 'post',
+                  data: serializedData,
+                  headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                  success: function(response) {
+                      alert(response.message);
+                      console.log(response.message)
+                      console.log(response.user)
+
+                  },
+                  error: function(response) {
+                      console.log(response);
+
+                  }
+              });
+       }); 
+
+        var loc = window.location
+        var wsStart = "ws://"
+        if (loc.protocol == "https:"){
+            wsStart = "wss://"
+        }
+        var webSocketEndpoint =  wsStart + loc.host + '/notifications/'  // ws : wss   // Websocket URL, Same on as mentioned in the routing.py
+
+
+        var socket = new WebSocket(webSocketEndpoint) // Creating a new Web Socket Connection
+
+        // Socket On receive message Functionality
+        socket.onmessage = function(e){
+            console.log('message', e)
+            console.log(e.data) // Access the notification data
+            window.alert(e.data)
+            //$("body").append("<h3>"+e.data+"</h3>")
+            // Can write any functionality based on your requirement
+        }
+
+        // Socket Connet Functionality
+        socket.onopen = function(e){
+            console.log('open', e)
+        }
+
+        // Socket Error Functionality
+        socket.onerror = function(e){
+            console.log('error', e)
+        }
+
+        // Socket close Functionality
+        socket.onclose = function(e){
+            console.log('closed', e)
+        }
+
+
+      
+    })
+</script>
+<script>
+    
+    {% comment %} document.addEventListener('DOMContentLoaded',function(){
+        const webSocketBridge = new channels.WebSocketBridge();  //
+        webSocketBridge.connect('/notifications/');
+        webSocketBridge.listen(function(action, stream){
+            console.log("RESPONSE :", action)
+
+            if(action.event == 'New User'){
+                window.alert(`new user ${action.text}`)
+            }
+        })
+       $(document).ws = webSocketBridge;
+    }) {% endcomment %}
+
+
+
+</script>
+
+</html>

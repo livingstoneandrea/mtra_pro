@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home | MT&RA </title>
+    <link rel="icon" href="{% static 'images/logo.svg' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-5.2.0-web/css/all.css' %}">
+</head>
+
+<body>
+    <noscript>
+        <strong>
+            We're sorry but livin inc doesn't work properly without javascript enabled.Please enable it to
+            continue.
+        </strong>      
+    </noscript>
+    <div id="app">
+        <header id="app-header" class="navbar_fixed">
+            <div class="main-menu">
+                <nav class="navbar">
+                    <div class="grid-parent">
+                        <div class="navbar-brand">
+                            <a href="" class="navbar-item">
+                                <img src="./static/images/logo.svg" alt="logo" width="68px">
+                            </a>
+                        </div>
+                        <a class="hamburger  " label="menu" role="" id="navbar-toggler">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <div class="navbar-menu v-center">
+                            <div class="navbar-start"></div>
+                            <div class="navbar-end">
+                                <a href="#about" class="navbar-item">About Us</a>
+                                <a href="#learn_more" class="navbar-item">Learn More</a>
+                                <a href="#blogs" class="navbar-item">Blog</a>
+                                <a href="#main-footer" class="navbar-item">Contacts</a>
+                                <a href="{% url 'accounts:login' %}" class="navbar-item">Account</a>
+                                <a href="{% url 'accounts:register' %}" class="navbar-item">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="">
+            <section class="home_banner-area">
+                <div class="overlay"></div>
+                <div class="banner-inner">
+                    <div class="grid-container ">
+                        <div class="--row">
+                            <section class="grid-10 d__flex layout-center h-center">
+                                <div class="text_align-c" style="padding-top: 3rem; margin-top: 3rem;">
+                                    <p style="margin-bottom: 1.5rem; color: #fff; font-size: 20px;">Find Job, Employement, and Career Opportunities</p>
+                                    <h1 class="text_c-white" style="color: #f1f1f1; font-weight: 700; font-size: 4rem;">Only MT&RA</h1>
+                                    <p style="font-size: 1.8rem; margin:1.2rem auto 3rem; color: #f1f1f1;" class="text_c-cream">
+                                        Make it easy for you to get connected to jobs offer around the world</p>
+                                    <div class="h-center">
+                                        <section class="--row text_align-c h-center">
+                                            <article class="grid-4 d__flex layout-center">
+                                                <div class="box_vertPad2">
+                                                    <div class=" d__flex">
+                                                        <article class="" style="margin-bottom: 10px; margin-right: 0.5rem;">
+                                                            <span class="fas fa-globe-africa" style="font-size:4em;color:#fff;"></span>
+                                                        </article>
+                                                        <article class="text_align-l">
+                                                            <strong class="text_c-light_gr" style="line-height:1;font-size:34px; font-weight:600; display: block;" id="countries">64</strong>
+                                                            <span class="d__block text_c-white">Countries</span>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <article class="grid-4 d__flex layout-center">
+                                                <div class="box_vertPad2">
+                                                    <div class=" d__flex">
+                                                        <article class="" style="margin-bottom: 10px; margin-right: 0.5rem;">
+                                                            <span class="fas fa-lightbulb" style="font-size:4em;color:#fff;"></span>
+                                                        </article>
+                                                        <article class="text_align-l">
+                                                            <strong class="text_c-light_gr" style="line-height:1;font-size:34px; font-weight:600; display: block;" id="companies">24</strong>
+                                                            <span class="d__block text_c-white">Companies</span>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <!--***-->
+                                            <article class="grid-4 d__flex layout-center">
+                                                <div class="box_vertPad2">
+                                                    <div class=" d__flex">
+                                                        <article class="" style="margin-bottom: 10px; margin-right: 0.5rem;">
+                                                            <span class="fas fa-users" style="font-size:4em;color:#fff;"></span>
+                                                        </article>
+                                                        <article class="text_align-l">
+                                                            <strong class="text_c-light_gr" style="line-height:1;font-size:34px; font-weight:600; display: block;" id="employees">16</strong>
+                                                            <span class="d__block text_c-white">Connected</span>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </section>
+                                    </div>
+
+                                </div>
+
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="app-about_sec box_vertPad5 " id="about">
+                <div class="grid-container ">
+
+                    <article class="grid-12" id="home-art_header">
+                        <div class="layout_rel v-h_center">
+                            <div class="layout_rel">
+                                <span class="grid-12">MT&RA </span>
+                                <p id="latest_title">Boost Your Chances with <strong>MT&RA</strong> </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="{% url 'accounts:register' %}" class="btn">Get Started</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="app-about_sec box_vertPad5 " id="about">
+                <div class="grid-container ">
+                    <div class="--row layout-center">
+                        <article class="grid-5">
+                            <figure class="about_img">
+                                <img src=" {% static 'images/work.svg' %}" alt="" class="">
+                            </figure>
+                        </article>
+                        <article class="grid-5">
+                            <div class="main_title text_align-l">
+                                <p class="top_text">
+                                    About MTRA
+                                    <span></span>
+                                </p>
+                                <h2>Create Links,Employement & <br> Travel Assists</h2>
+                                <p class="">
+                                    Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio.
+                                </p>
+                                <a href="" class="primary_btn2">
+                                    <span>Learn more</span>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="grid-12 grid-parent" style="padding-bottom: 4.5rem;" id="learn_more">
+                <div class="grid-parent layout-center v-h_center " id="home-art_cont">
+                    <article class="grid-12" id="home-art_header">
+                        <div class="layout_rel v-h_center">
+                            <div class="layout_rel">
+                                <span class="grid-12">MT&RA </span>
+                                <h2 id="latest_title">at glance</h2>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid-12 v-h_center">
+                        <div class="grid-8 v-h_center box_margBot4">
+                            <div class="grid-12 grid-parent box_BotPad2 text_align-c">
+                                <p class="text-align_c">
+                                    Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim
+
+                                </p>
+                                <br><br>
+
+                            </div>
+                        </div>
+                    </article>
+                    <div class="grid-parent grid-12 h-center text-align_c">
+                        <article class="grid-6 vert-alignC v-h_center ">
+
+                            <h2 class="box_vertPad2">Who is pro-job for?</h2>
+                            <h4 class="">Any one looking to navigate their professional life</h4>
+                            <br>
+                            <a href="" class="primary_btn2 box_margTop2 text_align-c h-center">learn more</a>
+                        </article>
+                        <article class="grid-6 h-center box-marginTop-10" style="overflow-x: hidden;">
+                            <img src="{% static 'images/guide.jpeg' %} " style="width:400px;max-width: 100%; border-radius: 50%; margin: auto;">
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="app-testimony_sec box_BotPad4" style="padding-top: 40px;" id="blogs">
+                <div class="grid-container max-width text_align-c">
+                    <article class="--row layout-center">
+                        <div class="grid-12">
+                            <div class="main_title">
+                                <p class="top_text">blogs</p>
+                                <h2 class="main-title">Recent Blogs by MT&RA</h2>
+                                <p> Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="--row">
+                        <div class="grid-4">
+                            <div class="single-blog">
+                                <div class="thumb">
+                                    <img src="{% static 'images/maxresdefault.jpg' %}" alt="" class="">
+                                </div>
+                                <div class="short_details">
+                                    <div class="meta-top d__flex">
+                                        <a href=""><i class="fas fa-user"></i> livin post</a>
+                                        <a href=""><i class="fas fa-calendar"></i> sep 14, 2020 </a>
+                                    </div>
+                                    <a href="" class="">
+                                        <h4>Make it easy,connection</h4>
+                                    </a>
+                                    <div class="text-wrap">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <a href="" class="primary_btn2">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-4">
+                            <div class="single-blog">
+                                <div class="thumb">
+                                    <img src="{% static 'images/maxresdefault.jpg' %}" alt="" class="">
+                                </div>
+                                <div class="short_details">
+                                    <div class="meta-top d__flex">
+                                        <a href=""><i class="fas fa-user"></i> livin post</a>
+                                        <a href=""><i class="fas fa-calendar"></i> oct 16, 2020 </a>
+                                    </div>
+                                    <a href="" class="">
+                                        <h4>MT&RA At Glance</h4>
+                                    </a>
+                                    <div class="text-wrap">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <a href="" class="primary_btn2">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-4">
+                            <div class="single-blog">
+                                <div class="thumb">
+                                    <img src="{% static 'images/maxresdefault.jpg' %}" alt="" class="">
+                                </div>
+                                <div class="short_details">
+                                    <div class="meta-top d__flex">
+                                        <a href=""><i class="fas fa-user"></i> admin post</a>
+                                        <a href=""><i class="fas fa-calendar"></i> Dec 19, 2020 </a>
+                                    </div>
+                                    <a href="" class="">
+                                        <h4>Who is pro-job for?</h4>
+                                    </a>
+                                    <div class="text-wrap">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <a href="" class="primary_btn2">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+            </section>
+            <section class="layout-center box_vertPad2 text_align-c">
+                <div class="layout-center box_horizontalPad2 box_vertPad5 text_align-c h-center max-width">
+                    <article class="vertical_alignc ">
+                        <form method="post" action="" class="grid-parent layout-center" target="_blank" id="subsc_form">
+                            <p class="grid-12 text_7n">Sign up for our News letter</p>
+                            <input type="email" name="email" placeholder="you@example.com" required maxlength="200" title="Email adress" class="grid-8 grid-md-5 input_text bg-primaryVeryLight">
+                            <button type="submit" title="subscribe" class="btn btn_ggPrimary2 btn_simple">subscribe</button>
+                        </form>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+        <footer class="grid-parent box_topPad2" id="main-footer">
+            <section class="grid-parent v-h_center layout-center layout_rel">
+                <div class="grid-parent box_topPad5 align-items_center text-align_c">
+                    <section class="v-h_center ">
+                        <div class="grid-parent">
+                            <article class="grid-6">
+                                <div class="grid-12 grid-parent text-align_c v-h_center">
+                                    <h3 class="footer-title h-center">MT&RA get you covered</h3>
+                                    <div class="grid-12 layout_rel" id="subscribe-form">
+
+                                        <img src="{% static 'images/logo.svg' %}" alt="logo" width="80px">
+
+                                    </div>
+
+                                    <p class="grid-12 sub_text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet adipisci ea commodi modi dolorum aperiam quo!
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="grid-6">
+                                <div class="grid-12 grid-parent layout-center" id="footer-widget">
+                                    <h3 class="footer-title">Contact Us</h3>
+                                    <ul class="grid-12 v-h_center">
+                                        <li><a href="">mt&ra@suppport.com</a></li>
+                                        <li><a href="">+254 956 888 960</a></li>
+                                        <li><a href=""> Nairobi Ave NW, Ste 550, DC</a></li>
+                                    </ul>
+                                    <div class="grid-12 v-h_center social_links">
+                                        <ul>
+                                            <li>
+                                                <a href=""><span class="fab fa-facebook-f"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span class="fab fa-google-plus"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span class="fab fa-twitter"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span class="fab fa-youtube"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span class="fab fa-instagram"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                    <section class="grid-12 box_vertPad2">
+                        <nav class="grid-parent grid-10 layout-center v-h_center ">
+                            <section class="grid-3 h-margin-2">
+                                <h4 class="">
+                                    <a href class="text_c-cream text_7">About us</a>
+                                    <a href class=""><i class="fa fa-angle-right"></i></a>
+                                </h4>
+                                <div class="">
+                                    <!-- *4--->
+
+                                    <article class="">
+                                        <a href="" class="text_c-white">Our impact</a>
+                                    </article>
+                                    <article class="">
+                                        <a href="" class="text_c-white">Contuct us</a>
+                                    </article>
+                                </div>
+                            </section>
+                            <section class="grid-3 h-margin-2">
+                                <h4 class="">
+                                    <a href class="text_c-cream text_7">Support and trust</a>
+                                    <a href class=""><i class="fa fa-angle-right"></i></a>
+                                </h4>
+                                <div class="">
+                                    <!-- *4--->
+                                    <article class="">
+                                        <a href="" class="text_c-white">Start an application</a>
+                                    </article>
+                                    <article class="">
+                                        <a href="" class="text_c-white">Why join?</a>
+                                    </article>
+                                    <article class="">
+                                        <a href="" class="text_c-white">Pricing &amp; Fees</a>
+                                    </article>
+                                </div>
+                            </section>
+                            <section class="grid-3 h-margin-2">
+                                <h4 class="">
+                                    <a href class="text_c-cream text_7">Policy</a>
+                                    <a href class=""><i class="fa fa-angle-right"></i></a>
+                                </h4>
+                                <div class="">
+                                    <!-- *4--->
+                                    <article class="">
+                                        <a href="" class="text_c-white">Terms and conditions</a>
+                                    </article>
+                                    <article class="">
+                                        <a href="" class="text_c-white">Privacy policy</a>
+                                    </article>
+                                    <article class="">
+                                        <a href="" class="text_c-white">Refund policy</a>
+                                    </article>
+                                </div>
+                            </section>
+                            <section class="grid-3 h-margin-2">
+                                <h4 class="">
+                                    <a href class="text_c-cream text_7">Companies</a>
+                                    <a href class=""><i class="fa fa-angle-right"></i></a>
+                                </h4>
+                                <div class="">
+                                    <!-- *4--->
+                                    <article class="">
+                                        <a href="" class="text_c-white">Our services </a>
+                                    </article>
+                                    <article class="">
+                                        <a href="" class="text_c-white">Our Partners </a>
+                                    </article>
+
+                                </div>
+                            </section>
+                        </nav>
+                    </section>
+                    <section class="grid-12 box_vertPad1  box_hrPad-0 text-align_c" style="background:#0a111a;border-radius: 6px 6px 0 0; ">
+                        <div class="grid-parent text-align_c h-center grid-11 box_hrPad-0">
+                            <article class="grid-6">
+                                <address class="text_c-light_gr" style="color: #f1f1f1; font-weight: 400; font-size:0.75em;">
+                                    &copy; Copyright 2020-2020 ,MT&RA organization (EIN:
+                                    30‑0108263; Kenya# 1122823) Nairobi Ave NW, Ste 550, DC
+                                    20005, Kenya
+                                    <br />
+                                    <span class="text_c-cream"> Questions? Call</span>
+                                    <span class="">
+                                        <a href="" class="text_c-light_gr">+254 799 998 812</a>
+                                    </span>
+                                </address>
+                            </article>
+                            <article class="grid-6">
+                                <span class="h-margin-2">
+                                    <i class="fas fa-globe-africa " style="font-size: 2em; color: #f1f1f1; padding: 2px;"></i>&#124;
+                                    <select style=" border-radius: 4px;">
+                                        <option value="">Ke</option>
+                                        <option value="">Us</option>
+                                    </select>
+                                </span>
+                                <span class="box_hrMargin-1"><a href="" class="text_c-cream" style="font-size: 14px;">privacy &#8226;</a></span>
+                                <span class="box_hrMargin-1"><a href="" class="text_c-light_gr" style="font-size: 14px;" >cookie &#8226;</a></span>
+                                <span class="box_hrMargin-1"><a href="" class="text_c-light_gr" style="font-size: 14px;">Data &#8226;</a></span>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </footer>
+    </div>
+    <a href="#" id="back-top" title="Back to top">&#10148;</a>
+</body>
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+   
+    $(document).ready(function(){
+
+        $('#countries').animateNumber({
+
+            number: 64,
+            color: 'green',
+            'font-size': '34px',
+            'font-weight': '700',
+            numberStep: function(now, tween) {
+                var floored_number = Math.floor(now),
+                    target = $(tween.elem);
+
+                target.text(floored_number);
+            }
+        }, {
+            easing: 'swing',
+            duration: 1800
+        });
+        $('#companies').animateNumber({
+
+            number: 24,
+            color: 'green',
+            'font-size': '34px',
+            'font-weight': '700',
+            numberStep: function(now, tween) {
+                var floored_number = Math.floor(now),
+                    target = $(tween.elem);
+
+                target.text(floored_number);
+            }
+        }, {
+            easing: 'swing',
+            duration: 1800
+        });
+        $('#employees').animateNumber({
+
+            number: 16,
+            color: 'green',
+            'font-size': '34px',
+            'font-weight': '700',
+            numberStep: function(now, tween) {
+                var floored_number = Math.floor(now),
+                    target = $(tween.elem);
+
+                target.text(floored_number);
+            }
+        }, {
+            easing: 'swing',
+            duration: 1800
+        });
+
+
+        $('form#subsc_form').submit(function(e) {
+              e.preventDefault();
+              var serializedData = $(this).serialize();
+              console.log("form data :",serializedData);
+               $.ajax({
+                  url: "{% url 'email_subscription' %}",
+                  dataType: "json",
+                  method: 'post',
+                  data: serializedData,
+                  headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+                  success: function(response) {
+                      var msg = response["message"];
+                      alert(msg);
+                     
+                  },
+                  error: function(response) {
+                      alert(response["error"]);
+
+                  }
+              }); 
+
+          });
+       });
+</script>
+
+
+</html>
