@@ -27,7 +27,7 @@
                 {% if form.errors %}
                   <ol>
                     {% for error in form.errors %}
-                      <li><strong>{{ error }}</strong></li>
+                      <li><strong>{{ error|escape }}</strong></li>
                     {% endfor %}
                   </ol>
                 {% endif %}

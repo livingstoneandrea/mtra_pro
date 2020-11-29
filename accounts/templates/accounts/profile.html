@@ -10,16 +10,9 @@
                                     <div class="text-align_c">
                                         <img src="{% static 'images/no-image-person.jpg' %}" alt="" class="rounded-circle" width="150">
                                         <h4 class="card-title">{{request.user.first_name}} {{request.user.last_name}}</h4>
-                                        <p class="card-subtitle">Front End Developer</p>
+                                        <p class="card-subtitle">{{emp_info.job_function }}</p>
                                         <div class="--row text-align_c layout-center">
-                                            {% comment %} <div class="grid-4">
-                                                <a href="" class="link"><i class="fas fa-user"></i></a>
-                                                <font class="font-medium">120</font>
-                                            </div>
-                                            <div class="grid-4">
-                                                <a href="" class="link"><i class="fas fa-info-circle"></i></a>
-                                                <font class="font-medium">20</font>
-                                            </div> {% endcomment %}
+                                            
                                         </div>
                                     </div>
                                 </div>

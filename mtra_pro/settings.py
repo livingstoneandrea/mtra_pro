@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'channels',
     'accounts.apps.AccountsConfig',
     'notifications_app',
+    'notifications',
+    'posts'
 ]
 
 MIDDLEWARE = [

@@ -6,13 +6,15 @@ from .managers import CustomUserManager
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
 class User(AbstractUser):
     # username = None
     email = models.EmailField(_('email address'),unique=True)
-    phone = models.CharField(max_length=11,blank=True,null=True)
+    phone_regex = RegexValidator(regex=r'^\+?\d{9,15}$',message="Phone number must be entered in the format:'+254999999999'.Upto 15 digits allowed")
+    phone = models.CharField(validators=[phone_regex], max_length=17,blank=True,null=True)
     address = models.CharField(max_length=60,blank=True,null=True)
     location = models.CharField(max_length=60,blank=True,null=True)
     
@@ -20,15 +22,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
     
     objects = CustomUserManager()
-    # @property
-    # def group_name(self):
-    #     """
-    #     Returns a group name based on the user's id to be used by Django Channels.
-    #     Example usage:
-    #     user = User.objects.get(pk=1)
-    #     group_name = user.group_name
-    #     """
-    #     return "user_%s" % self.id
+    
     
     def __str__(self):
         return self.email

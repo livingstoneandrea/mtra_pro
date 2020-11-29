@@ -24,15 +24,17 @@
                 {% if form.errors %}
                   <ol>
                     {% for error in form.errors %}
-                      <li><strong>{{ error }}</strong></li>
+                      <li><strong>{{ error|safe }}</strong></li>
                     {% endfor %}
                   </ol>
                 {% endif %}
                 <article class="login_field field">
+                    {% if form.username.errors %}<li>{{form.username.errors|striptags}}</li>{% endif %}
                     <span class="fas fa-user-clock field_icon"></span>
                      {{form.username}}   
                 </article>
                 <article class="login_field field">
+                    {% if form.password.errors %}<li>{{form.password.errors|striptags}}</li>{% endif %}
                     <span class="fas fa-eye-slash field_icon"></span>
                     {{form.password}}  
                 </article>

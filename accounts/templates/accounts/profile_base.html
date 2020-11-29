@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load notifications_tags %}
 <html lang="en">
 
 <head>
@@ -68,18 +69,18 @@
                             <div class="line-strike"></div>
 
                             <div class="profile">
-                                <div class="acc-opt" role="button" aria-label="User Menu" tabindex="0">
+                                <div class="acc-opt" role="button" aria-label="User Menu" >
                                     <div class="">
-                                        <img src="{% static 'images/default1.png' %}" alt="Avatar" class="">
+                                        <img src="{% static 'images/no-image-person.jpg' %}" alt="Avatar" class="">
                                     </div>
                                     <div class="acc-opt_toggler" style="width: 16px; height: 12px;">
                                         <span class="fas fa-angle-down"></span>
                                     </div>
                                 </div>
-                                <div class="dropdown " style="position: absolute;will-change: transform;top: 20px; left: 0px; transform: translate3d(-160px,28px, 0px);">
+                                <div class="dropdown " style="position: absolute;will-change: transform;top: 20px; left: 0px; transform: translate3d(-110px,20px, 0px);">
                                     <div class="dropdown-inner dropdown-menu dropdown-menu-right" style="width: 100%;">
                                         <div class="sc-email">
-                                            <div class="sc-email_btn" role="button" tabindex="0">
+                                            <div class="sc-email_btn" role="button" >
                                                 <div class="wrapper-avatar"><img src="{% static 'images/default1.png' %}" alt="Avatar" class=""></div>
                                                 <div class="prof-lable">
                                                     <p class="textTruncate">
@@ -90,8 +91,8 @@
                                             </div>
                                         </div>
                                         <ul class="" style="list-style: none;padding: 8px 16px; border-top: 1px solid rgb(229,232,237);">
-                                            <li class="dropdown-inner_list" style="padding: 4px 0px;"><a href="" class="">My Profile</a></li>
-                                            <li class="dropdown-inner_list" style="padding: 4px 0px;"><a href="{% url 'accounts:logout' %}" class="">Sign Out</a></li>
+                                            <li class="dropdown-inner_list" style="padding: 4px 0px;"><a href="" class="" style="display:inline-block; width:100%;">My Profile</a></li>
+                                            <li class="dropdown-inner_list" style="padding: 4px 0px;"><a href="{% url 'accounts:logout' %}" class="" style="display:inline-block ;width:100%;">Sign Out</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -135,7 +136,7 @@
                                     <a href="" class="menu-item">Session info</a>
                                     <a href="{% url 'password_reset' %}" class="menu-item">Secure account</a>
                                     <a href="{% url 'accounts:profile' %}" class="menu-item">Monitoring</a>
-                                    <a href="{% url 'notification:notifier' %}" class="menu-item">Notifications</a>
+                                    <a href="{% url 'notification:notifier' %}" class="menu-item">Notifications {% live_notify_badge %}</a>
                                 </div>
                             </div>
                             <div style="border-bottom: 1px solid#1c2638;;"></div>
@@ -200,6 +201,8 @@
 <script src=" {% static 'js/jquery-3.3.1.js' %}"></script>
 <script src=" {% static 'js/perfect-scrollbar.min.js' %} "></script>
 <script src=" {% static 'js/dashboard.js' %} "></script>
+<script src=" {% static 'notifications/notify.js' %}" type="text/javascript"></script>
+{% register_notify_callbacks callbacks='fill_notification_list, fill_notification_badge' %}
 <script>
     $(document).ready(function(){
         $('form').submit(function(e) {

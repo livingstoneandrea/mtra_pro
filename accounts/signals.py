@@ -5,6 +5,8 @@ from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from django.utils.datetime_safe import datetime
 
+from notifications.signals import notify
+
 
 @receiver(post_save, sender=User)
 def notify_new_user_signal(sender, instance, created, **kwargs):
@@ -22,8 +24,11 @@ def notify_new_user_signal(sender, instance, created, **kwargs):
                 "event":"New User",
                 "text": data,
             },
-        )    
-        
+        )  
+@receiver(post_save, sender=User)          
+def notify_handler(sender, instance, created,**kwargs):
+    notify.send(instance, verb='was saved')  
+# post_save.connect(notify_handler, sender=User)          
     
     
     

@@ -203,7 +203,15 @@
                         </div>
                     </article>
                     <article class="--row">
-                        <div class="grid-4">
+                        {% if blog_posts.count == 0 %}
+                            <h4>No posts yet</h4>
+                        {% else %}
+                            {% for blog_post in blog_posts %}
+                                {% include "posts/_post.html" %}
+                            
+                            {% endfor %}   
+                        {% endif %}
+                        {% comment %} <div class="grid-4">
                             <div class="single-blog">
                                 <div class="thumb">
                                     <img src="{% static 'images/maxresdefault.jpg' %}" alt="" class="">
@@ -265,8 +273,9 @@
                         </div>
 
                     </article>
-                </div>
+                </div> {% endcomment %}
             </section>
+           
             <section class="layout-center box_vertPad2 text_align-c">
                 <div class="layout-center box_horizontalPad2 box_vertPad5 text_align-c h-center max-width">
                     <article class="vertical_alignc ">

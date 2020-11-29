@@ -20,7 +20,7 @@ class CustomAuthentictaionForm(AuthenticationForm):
    
              
 class UserCreateForm(CustomUserCreationForm):
-    username = forms.CharField(widget= forms.TextInput(attrs={'placeholder':'user name','class':'field_input','required':True,'autofocus':True}))
+    username = forms.CharField(widget= forms.TextInput(attrs={'placeholder':'user name','class':'field_input','required':True,'autofocus':True}),error_messages={'required':'Note username should be unique!'})
     email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder':'Email(e.g you@example.com)','class':'field_input','required':True}))
     phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'phone','class':'field_input','required':True}))
     password1 = forms.CharField(widget= forms.PasswordInput(attrs={'class':'field_input','placeholder':'password','required':True}))

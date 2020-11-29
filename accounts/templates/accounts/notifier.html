@@ -1,10 +1,13 @@
 {% extends 'accounts/profile_base.html' %}
+{% load notifications_tags %}
 {% load static %}
 
 {% block main_content %}
     <section class="">
         <h4>user notifications</h4>
-        <p>Your currently have no notifications</p>
+        <p>Your currently have <span>{% notifications_unread %}</span> notifications</p>
+        
+        {% live_notify_list %}
     
     </section>
 

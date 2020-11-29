@@ -20,6 +20,7 @@ from django.utils import timezone
 from django.utils.datetime_safe import datetime
 from django.http import HttpResponseForbidden
 from django.contrib import messages
+from notifications.signals import notify
 User = get_user_model()
 
 # Create your views here.
@@ -72,6 +73,10 @@ class Profile(LoginRequiredMixin,FormMixin , View):
     def get_context_data(self, **kwargs):
         context = {}
         
+        try:
+            context['emp_info'] = Employment_detail.objects.none()
+        except :
+            context['emp_info'] = UserProfileForm()
         try:
             context['profile_form'] = UserProfileForm(instance = self.get_object())
         except :
@@ -139,7 +144,7 @@ class Profile(LoginRequiredMixin,FormMixin , View):
                         "text": data,
                     },
                 )
-                
+                notify.send(self.get_object(),recipient=self.get_object(), verb="notification  :"+ "your profile succesful updated @ " +str(datetime.now()) )
                 
                 
                 #send to client side

@@ -1,0 +1,27 @@
+{% load static %}
+<div class="grid-4">
+    <div class="single-blog">
+        <div class="thumb">
+            {% if not blog_post.blog_image %}
+                 <img src="{% static 'images/maxresdefault.jpg' %}" alt="" class="">
+            {% else %}
+                 <img src="{{blog_post.blog_image.url}}" alt="" class="">
+            
+            {% endif %}
+           
+        </div>
+        <div class="short_details">
+            <div class="meta-top d__flex">
+                <a href=""><i class="fas fa-user"></i>{{blog_post.user.username}} post</a>
+                <a href=""><i class="fas fa-calendar"></i>{{blog_post.created_at}} </a>
+            </div>
+            <a href="" class="">
+                <h4>{{blog_post.post_title}}</h4>
+            </a>
+            <div class="text-wrap">
+                <p>{{blog_post.post_description}}.</p>
+            </div>
+            <a href="" class="primary_btn2">Learn More</a>
+        </div>
+    </div>
+</div>

@@ -20,15 +20,18 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+import notifications.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.HomePage.as_view(),name='home'),
+    path('',views.IndexPage.as_view(),name='home'),
     path('test/',views.TestPage.as_view(),name='test'),
     path('thanks/',views.ThanksPage.as_view(),name='thanks'),
     path('accounts/',include('accounts.urls',namespace='accounts')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/notifications/',include('notifications_app.urls',namespace='notification')),
+    path('inbox/notifications/',include(notifications.urls,namespace='notifications')),
+    path('posts/',include('posts.urls',namespace='posts')),
     path('email-subscription/',views.EmailSubscriptions,name='email_subscription'),
 ]
 
